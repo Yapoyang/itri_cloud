@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Cloud Monitor </title> <a href="/show/"> Refresh </a>
+        <meta charest='utf-8'>
+    </head>
+    <body>
+        <h2> Current </h2>
+                <tr>
+                    <br> Current Tempreture : {{a}} C -- {{b}} </br>
+                    <br> Current Humidity   : {{c}} % -- {{d}} </br>
+                    <br> Current Status     : {{e}}   -- {{f}} </br>
+                    <br>  </br>
+                    <br> Avreage Temperture : {{g}} </br>
+                    <br> Average Humidity   : {{h}} </br>
+
+                </tr>
+        <br></br>  
+        <form action="" method="post">
+         <table>
+          <label for="Lux"> Lux(0~100)  :   </label>{% csrf_token %}
+          <input type="text" name="Lux" size=3 id="Lux">
+          <input type="submit" value="Adjust">
+         </table>
+        </form>
+
+    </body>
+</html>

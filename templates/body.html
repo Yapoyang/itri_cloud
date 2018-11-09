@@ -1,0 +1,11 @@
+<h2> Welcome to Restaurant King </h2>
+        {% if request.user.is_authenticated %}
+             <p> {{request.user}} sign in already 
+                 <a href="/accounts/logout/"> log out</a>            
+             </p>
+             <a href="/restaurants_list/"> Restaurants List</a>
+        {% else %}
+             <p> not sign in yet <a href="/accounts/login/"> sign in</a> </p>
+
+        {% endif %}
+            <p> if you don't have account, plz <a href="/accounts/register/">regi</a></p>

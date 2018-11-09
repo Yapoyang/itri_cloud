@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Menu </title>
+        <meta charest='utf-8'>
+        <style>
+           table, th td{
+              border: 1px solid black;
+           }
+        </style>
+      </head>
+      <body>
+          <p>You are now here {{path}} </p>
+		  <h2>{{restaurant.name}}'s menu</h2>
+		  {% if restaurant.food_set.all %}
+		  <p> this restaurant has {{restaurant.food_set.all|length}} dishes</p>
+		  <table>
+		     <tr>
+		         <th>food_name</th>
+		         <th>price</th>
+		         <th>is_spicy</th>
+		         <th>comment</th>
+		     </tr>
+		     {% for food in restaurant.food_set.all %}
+		     <tr>
+		         <td>{{food.name}}</td>
+		         <td>{{food.price}}</td>
+		         <td>{% if food.is_spicy %} spicy {% else %}
+		                                    not spicy{% endif %}</td>
+		         <td>{{food.comment}}</td> 
+		     </tr>
+		     {% endfor %}
+		</table>
+		{% else %}
+		<p>nothing</p>
+		{% endif %}
+      </body>
+</html>
